@@ -1,0 +1,35 @@
+{
+  "name": "amazon",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "tutorials",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shashikant-burnwal/amazon-app.git"
+  },
+  "author": "shashikant burnwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shashikant-burnwal/amazon-app/issues"
+  },
+  "homepage": "https://github.com/shashikant-burnwal/amazon-app#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.12",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-plugin-react": "^7.23.2",
+    "nodemon": "^2.0.7"
+  }
+}
