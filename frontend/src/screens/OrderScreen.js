@@ -70,8 +70,10 @@ const OrderScreen = (props) => {
                 }
             }
         }
+
+     
     
-    }, [dispatch, order, orderId, sdkReady, successPay, successDeliver]);
+    }, [dispatch, orderId, sdkReady, successPay, successDeliver, order]);
 
     const successPaymentHandler = (paymentResult) => {
         dispatch (payOrder (order, paymentResult));
@@ -249,7 +251,7 @@ const OrderScreen = (props) => {
 
                             }
 
-                            {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
+                            {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                                 <li>
                                     {loadingDeliver && <LoadingBox></LoadingBox>}
                                     {errorDeliver && (
