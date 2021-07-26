@@ -31,7 +31,17 @@ const userSchema = new mongoose.Schema({
         default:false,
         required: true
 
-    }
+    },
+
+    seller: {
+        name:String,
+        logo:String,
+        description: String,
+        rating:{type:Number, default:0, required:true},
+        numReviews: {type:Number, default:0, required:true}
+
+
+    },
 
 
 

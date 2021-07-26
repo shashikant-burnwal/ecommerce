@@ -40,7 +40,7 @@ const PlaceOrderScreen = (props) => {
 
         }
       
-    }, [dispatch, order, ORDER_CREATE_RESET]);
+    }, [dispatch, props.history, order, success]);
 
 
 

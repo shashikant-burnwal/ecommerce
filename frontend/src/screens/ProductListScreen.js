@@ -6,6 +6,7 @@ import {createProduct, deleteProduct, listProducts} from '../actions/productActi
 import { PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET } from '../constants/productConstants';
 
 export default function ProductListScreen (props) {
+    const sellerMode = props.match.path.indexOf ('/seller')>=0;
     const productList = useSelector(state=>state.productList);
     const {loading, error, products} = productList;
 
@@ -25,6 +26,9 @@ export default function ProductListScreen (props) {
 
     } = productDelete;
 
+    const userSignin = useSelector(state=>state.userSignin);
+    const {userInfo} = userSignin;
+
 
     const dispatch = useDispatch();
     
@@ -37,8 +41,8 @@ export default function ProductListScreen (props) {
         if (successDelete){
             dispatch ({type: PRODUCT_DELETE_RESET});
         }
-       dispatch(listProducts());
-    },[createdProduct, dispatch, props.history, successCreate, successDelete]);
+       dispatch(listProducts({seller:sellerMode?userInfo._id:""}));
+    },[createdProduct, dispatch, props.history, successCreate, successDelete, userInfo._id, sellerMode]);
 
 
 
